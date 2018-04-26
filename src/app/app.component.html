@@ -1,0 +1,67 @@
+<div class="container card">
+    <h3 class="card-title">Report</h3>
+
+      <div class="row">
+        <div class="col-md-12">
+          <form #reportForm="ngForm" action="" class="form-control">
+            <div class="row">
+              <div class="col-md-4 form-check">
+                <input type="checkbox" class="form-check-input" name="checkCountry" ngModel (change)="isCollapsed = !isCollapsed" required />
+                <label for="contry" class="form-check-label">Countries</label>
+              </div>
+
+              <div class="col-md-4 form-check">
+                <input type="checkbox" class="form-check-input" name="checkBrowser" ngModel  (change)="isCollapsed1 = !isCollapsed1" required />
+                <label for="browser" class="form-check-label">Browsers</label>
+              </div>
+
+              <div class="col-md-4 form-check">
+                <input type="checkbox" class="form-check-input" name="checkBrowser" ngModel  (change)="isCollapsed2 = !isCollapsed2" required/>
+                <label for="status" class="form-check-label">Status</label>
+              </div>
+            </div>
+          <!-- <hr> -->
+           
+          <div class="row">
+            <div class="col-md-4">
+              <div class="example-wrapper" [collapse]="isCollapsed">
+                <kendo-autocomplete 
+                [data]="listItems"  
+                [placeholder]="'e.g. Egypt'" 
+                [popupSettings]="{ height: 300, width: 300 }" 
+                [suggest]="true">
+              </kendo-autocomplete>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="example-wrapper" [collapse]="isCollapsed1">
+                <kendo-autocomplete 
+                [data]="listBrowsers"  
+                [placeholder]="'e.g. chrome'" 
+                [popupSettings]="{ height: 300, width: 300 }" 
+                [suggest]="true"></kendo-autocomplete>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="example-wrapper" [collapse]="isCollapsed2">
+                <kendo-autocomplete 
+                [data]="listStatus"  
+                [placeholder]="'e.g. approved'" 
+                [popupSettings]="{ height: 300, width: 300 }" 
+                [suggest]="true"></kendo-autocomplete>
+              </div>
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+        </div>
+
+
+
+      </div>
+
+</div>
